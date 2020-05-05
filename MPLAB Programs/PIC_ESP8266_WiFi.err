@@ -1,0 +1,2 @@
+Error[1027] C:\Users\lenovo\Downloads\PIC18F4550 ESP8266 WiFi Project file\PIC_ESP8266_WiFi.X\PIC_ESP8266_WiFi.c 5 : unable to locate 'stdint.h'
+Error[1027] C:\Users\lenovo\Downloads\PIC18F4550 ESP8266 WiFi Project file\PIC_ESP8266_WiFi.X\PIC_ESP8266_WiFi.c 7 : unable to locate 'stdbool.h'

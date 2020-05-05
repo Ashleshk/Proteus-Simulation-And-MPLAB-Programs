@@ -1,0 +1,3 @@
+Error[1027] C:\Users\lenovo\Documents\MPLAB Program\espmodule_code.c 10 : unable to locate 'xc.h'
+Error[1027] C:\Users\lenovo\Documents\MPLAB Program\esp8266_functions.h 40 : unable to locate 'stdbool.h'
+Error[1027] C:\Users\lenovo\Documents\MPLAB Program\esp8266_functions.h 41 : unable to locate 'stdint.h'
