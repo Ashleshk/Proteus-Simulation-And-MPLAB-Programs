@@ -1,0 +1,50 @@
+A51 MACRO ASSEMBLER  HEXCOUNTERCODE                                                       07/14/2018 22:22:09 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\hexcountercode.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE hexcountercode.asm SET(SMALL) DEBUG PRINT(.\Listings\hexcountercode.lst
+                      ) OBJECT(.\Objects\hexcountercode.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020036            2     LJMP MAIN
+0036                   3     ORG 0036H
+                       4     
+0036 7BFF              5     MAIN: MOV R3,#0FFH
+0038 7400              6                     MOV A,#00H
+003A 114A              7                     ACALL DELAY
+003C F590              8                     COUNT: MOV P1,A
+003E 04                9                     INC A 
+003F 114A             10                     ACALL DELAY
+0041 DBF9             11                     DJNZ R3,COUNT
+0043 7590FF           12                     MOV P1,#0FFH
+0046 114A             13                     ACALL DELAY
+0048 80FE             14                     SJMP $
+004A 7A5A             15     DELAY:  MOV R2,#90
+004C 7CFF             16                     UP:MOV R4,#0FFH
+004E DCFE             17                     AGAIN:DJNZ R4,AGAIN
+0050 DAFA             18                     DJNZ R2,UP
+0052 22               19                     RET
+                      20     END             
+A51 MACRO ASSEMBLER  HEXCOUNTERCODE                                                       07/14/2018 22:22:09 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   004EH   A   
+COUNT. . . . . . .  C ADDR   003CH   A   
+DELAY. . . . . . .  C ADDR   004AH   A   
+MAIN . . . . . . .  C ADDR   0036H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+UP . . . . . . . .  C ADDR   004CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
