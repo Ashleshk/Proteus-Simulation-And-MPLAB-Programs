@@ -1,0 +1,55 @@
+A51 MACRO ASSEMBLER  SETPPERCODE                                                          08/19/2018 01:24:50 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\setppercode.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE setppercode.a51 SET(SMALL) DEBUG PRINT(.\Listings\setppercode.lst) OBJE
+                      CT(.\Objects\setppercode.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020030            2             LJMP MAIN
+0030                   3     ORG 0030H
+                       4      
+0030 7B12              5      MAIN:  MOV R3,#12H 
+0032 759003            6      UP:    MOV  P1,#03H
+0035 1148              7                     ACALL DELAY
+0037 75A006            8                     MOV P2, #06H
+003A 1148              9                     ACALL DELAY
+003C 75900C           10                     MOV P1,#0CH
+003F 1148             11                     ACALL DELAY
+0041 759009           12                     MOV P1, #09H
+0044 1148             13                     ACALL DELAY
+0046 DBEA             14                     DJNZ R3 , UP
+                      15                     
+0048 7910             16     DELAY:  MOV R1,#10H
+004A 7890             17     TOP:    MOV R0,#90H
+004C 7AFF             18     UPP:            MOV R2,#0FFH
+004E DAFE             19     AGN:    DJNZ R2,AGN
+0050 D8FA             20                     DJNZ R0,UPP
+0052 D9F6             21                     DJNZ R1,TOP
+0054 22               22                     RET
+                      23     END
+A51 MACRO ASSEMBLER  SETPPERCODE                                                          08/19/2018 01:24:50 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGN. . . . . . . .  C ADDR   004EH   A   
+DELAY. . . . . . .  C ADDR   0048H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TOP. . . . . . . .  C ADDR   004AH   A   
+UP . . . . . . . .  C ADDR   0032H   A   
+UPP. . . . . . . .  C ADDR   004CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

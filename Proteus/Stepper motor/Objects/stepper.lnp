@@ -1,0 +1,3 @@
+".\Objects\setppercode.obj" 
+TO ".\Objects\stepper" 
+PRINT(".\Listings\stepper.m51") RAMSIZE(256) 
