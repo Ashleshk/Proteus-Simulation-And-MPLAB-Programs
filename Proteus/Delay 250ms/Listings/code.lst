@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  CODE                                                                 07/17/2018 17:45:08 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\code.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE code.asm SET(SMALL) DEBUG PRINT(.\Listings\code.lst) OBJECT(.\Objects\c
+                      ode.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020030            2             LJMP MAIN
+0030                   3     ORG 0030H
+                       4     
+0030 759000            5     MAIN:  MOV P1 ,#00H         ;set p1 to low 
+0033 113C              6                     ACALL DELAY         ;generate delay 250ms
+0035 7590FF            7                     MOV P1, #0FFH           ;set p1 to high
+0038 113C              8                     ACALL DELAY                     ;agin 250ms delay
+003A 80F4              9                     SJMP MAIN
+                      10                     
+                      11                     
+003C                  12     DELAY:  
+003C 7A05             13                     MOV R2,#5
+003E 7B5A             14     TOP:    MOV R3,#90
+0040 7CFF             15     UP:             MOV R4,#0FFH
+0042 DCFE             16     AGAIN:  DJNZ R4,AGAIN
+0044 DBFA             17                     DJNZ R3,UP
+0046 DAF6             18                     DJNZ R2,TOP
+0048 22               19                     RET
+                      20     
+                      21     END
+A51 MACRO ASSEMBLER  CODE                                                                 07/17/2018 17:45:08 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0042H   A   
+DELAY. . . . . . .  C ADDR   003CH   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TOP. . . . . . . .  C ADDR   003EH   A   
+UP . . . . . . . .  C ADDR   0040H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

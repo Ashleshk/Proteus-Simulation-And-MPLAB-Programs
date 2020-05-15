@@ -1,0 +1,58 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/17/2018  17:45:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\code.obj TO .\Objects\250msDelay PRINT (.\Listings\250msDelay.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\code.obj (CODE)
+
+
+LINK MAP OF MODULE:  .\Objects\250msDelay (CODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0049H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\250msDelay (CODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CODE
+  C:0042H         SYMBOL        AGAIN
+  C:003CH         SYMBOL        DELAY
+  C:0030H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:003EH         SYMBOL        TOP
+  C:0040H         SYMBOL        UP
+  C:0000H         LINE#         2
+  C:0030H         LINE#         5
+  C:0033H         LINE#         6
+  C:0035H         LINE#         7
+  C:0038H         LINE#         8
+  C:003AH         LINE#         9
+  C:003CH         LINE#         13
+  C:003EH         LINE#         14
+  C:0040H         LINE#         15
+  C:0042H         LINE#         16
+  C:0044H         LINE#         17
+  C:0046H         LINE#         18
+  C:0048H         LINE#         19
+  -------         ENDMOD        CODE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 001CH BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=73
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
