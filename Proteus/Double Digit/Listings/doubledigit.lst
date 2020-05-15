@@ -1,0 +1,76 @@
+A51 MACRO ASSEMBLER  DOUBLEDIGIT                                                          08/25/2018 20:25:28 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\doubledigit.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE doubledigit.a51 SET(SMALL) DEBUG PRINT(.\Listings\doubledigit.lst) OBJE
+                      CT(.\Objects\doubledigit.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020030            2             LJMP MAIN
+0030                   3     ORG 0030H
+                       4             
+0030 901000            5     MAIN:  MOV DPTR , #1000H
+0033 7B00              6                     MOV R3, #00H      ;TO CONTROL UNITS PLACE
+0035 7A01              7                     MOV R2, #01H      ;TO CONTROL TENS PLACE
+                       8      
+0037 75A0C0            9                     MOV P2 ,#0C0H   ; LOADING VALUE WITH '0' TENS PLACE
+                      10                     
+003A EB               11             UP:     MOV A,R3
+003B 93               12                     MOVC A,@A+DPTR
+003C F590             13                     MOV P1,A                ;INITALISE WITH DIGIT 0
+                      14                      
+003E 1154             15                     ACALL DELAY
+0040 0B               16                     INC R3
+0041 BB0AF6           17                     CJNE R3,#0AH,UP         
+0044 7B00             18                      MOV R3,#00H
+                      19                      
+                      20                     
+                      21                     
+0046 EA               22                     MOV A,R2
+0047 93               23                     MOVC A,@A+DPTR
+0048 F5A0             24                     MOV P2,A                ;INITALISE WITH DIGIT 1
+                      25                      
+004A 1154             26                     ACALL DELAY
+004C 0A               27                     INC R2
+004D BA0AEA           28                     CJNE R2,#0AH,UP         
+0050 7A00             29                      MOV R2,#00H
+                      30                     
+0052 80DC             31                     SJMP MAIN
+                      32     
+0054                  33     DELAY:   
+0054 78FF             34                     MOV R0,#0FFH
+0056 7CFF             35             UPP:MOV R4,#0FFH
+0058 DCFE             36             AGN:DJNZ R4,AGN
+005A D8FA             37                      DJNZ R0,UPP
+                      38                      
+005C 22               39                     RET
+                      40                     
+1000                  41     ORG 1000H
+1000 C0F9A4B0         42     DB 0C0H,0F9H,0A4H,0B0H,99H,92H,82H,0F8H,80H,90H
+1004 999282F8                
+1008 8090                    
+                      43     END     
+A51 MACRO ASSEMBLER  DOUBLEDIGIT                                                          08/25/2018 20:25:28 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGN. . . . . . . .  C ADDR   0058H   A   
+DELAY. . . . . . .  C ADDR   0054H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+UP . . . . . . . .  C ADDR   003AH   A   
+UPP. . . . . . . .  C ADDR   0056H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

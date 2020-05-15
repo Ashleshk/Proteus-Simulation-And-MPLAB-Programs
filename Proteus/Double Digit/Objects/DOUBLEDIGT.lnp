@@ -1,0 +1,3 @@
+".\Objects\doubledigit.obj" 
+TO ".\Objects\DOUBLEDIGT" 
+PRINT(".\Listings\DOUBLEDIGT.m51") RAMSIZE(256) 
