@@ -1,0 +1,58 @@
+A51 MACRO ASSEMBLER  BCDCODE                                                              08/20/2018 01:16:28 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\bcdcode.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE bcdcode.a51 SET(SMALL) DEBUG PRINT(.\Listings\bcdcode.lst) OBJECT(.\Obj
+                      ects\bcdcode.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020030            2             LJMP MAIN
+0030                   3     ORG 0030H
+                       4             
+0030 901000            5     MAIN:  MOV DPTR , #1000H
+0033 7B0A              6                     MOV R3, #0AH
+0035 93                7             UP:     MOVC A,@A+DPTR
+0036 F590              8                     MOV P1,A
+0038 1140              9                     ACALL DELAY
+003A E4               10                     CLR A 
+003B A3               11                     INC DPTR
+003C DBF7             12                     DJNZ R3, UP
+003E 80F0             13                     SJMP MAIN
+                      14     
+0040 7990             15     DELAY:  MOV R1,#90H
+0042 7A10             16             TOP:MOV R2,#10H
+0044 7CFF             17             UPP:MOV R4,#0FFH
+0046 DCFE             18             AGN:DJNZ R4,AGN
+0048 DAFA             19                     DJNZ R2,UPP
+004A D9F6             20                     DJNZ R1,TOP
+004C 22               21                     RET
+                      22                     
+1000                  23     ORG 1000H
+1000 C0F9A4B0         24     DB 0C0H,0F9H,0A4H,0B0H,99H,92H,82H,0F8H,80H,90H
+1004 999282F8                
+1008 8090                    
+                      25     END     
+A51 MACRO ASSEMBLER  BCDCODE                                                              08/20/2018 01:16:28 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGN. . . . . . . .  C ADDR   0046H   A   
+DELAY. . . . . . .  C ADDR   0040H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TOP. . . . . . . .  C ADDR   0042H   A   
+UP . . . . . . . .  C ADDR   0035H   A   
+UPP. . . . . . . .  C ADDR   0044H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

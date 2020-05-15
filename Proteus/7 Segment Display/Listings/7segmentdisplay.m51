@@ -1,0 +1,67 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/20/2018  01:16:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\bcdcode.obj TO .\Objects\7segmentdisplay PRINT (.\Listings\7segmentdisplay.m51) RA
+>> MSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\bcdcode.obj (BCDCODE)
+
+
+LINK MAP OF MODULE:  .\Objects\7segmentdisplay (BCDCODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     100AH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7segmentdisplay (BCDCODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BCDCODE
+  C:0046H         SYMBOL        AGN
+  C:0040H         SYMBOL        DELAY
+  C:0030H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0042H         SYMBOL        TOP
+  C:0035H         SYMBOL        UP
+  C:0044H         SYMBOL        UPP
+  C:0000H         LINE#         2
+  C:0030H         LINE#         5
+  C:0033H         LINE#         6
+  C:0035H         LINE#         7
+  C:0036H         LINE#         8
+  C:0038H         LINE#         9
+  C:003AH         LINE#         10
+  C:003BH         LINE#         11
+  C:003CH         LINE#         12
+  C:003EH         LINE#         13
+  C:0040H         LINE#         15
+  C:0042H         LINE#         16
+  C:0044H         LINE#         17
+  C:0046H         LINE#         18
+  C:0048H         LINE#         19
+  C:004AH         LINE#         20
+  C:004CH         LINE#         21
+  -------         ENDMOD        BCDCODE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002AH BYTE ( 2%) *
+******************************************************************************
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/20/2018  01:16:28  PAGE 2
+
+
+
+Program Size: data=8.0 xdata=0 code=4106
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

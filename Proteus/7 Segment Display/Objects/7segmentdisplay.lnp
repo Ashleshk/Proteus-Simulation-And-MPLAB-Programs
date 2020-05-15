@@ -1,0 +1,3 @@
+".\Objects\bcdcode.obj" 
+TO ".\Objects\7segmentdisplay" 
+PRINT(".\Listings\7segmentdisplay.m51") RAMSIZE(256) 
