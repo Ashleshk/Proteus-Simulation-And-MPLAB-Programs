@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  HHH                                                                  07/14/2018 23:08:14 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\hhh.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE self\hhh.asm SET(SMALL) DEBUG PRINT(.\Listings\hhh.lst) OBJECT(.\Object
+                      s\hhh.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 7BFF              1     MAIN: MOV R3,#0FFH
+0002 7400              2                     MOV A,#00H
+0004 1114              3                     ACALL DELAY
+0006 F580              4                     COUNT: MOV P0,A
+0008 04                5                     INC A 
+0009 1114              6                     ACALL DELAY
+000B DBF9              7                     DJNZ R3,COUNT
+000D 7580FF            8                     MOV P0,#0FFH
+0010 1114              9                     ACALL DELAY
+0012 80FE             10                     SJMP $
+0014 7AB4             11     DELAY:  MOV R2,#180
+0016 7CFF             12                     UP:MOV R4,#0FFH
+0018 DCFE             13                     AGAIN:DJNZ R4,AGAIN
+001A DAFA             14                     DJNZ R2,UP
+001C 22               15                     RET
+                      16     END             
+A51 MACRO ASSEMBLER  HHH                                                                  07/14/2018 23:08:14 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0018H   A   
+COUNT. . . . . . .  C ADDR   0006H   A   
+DELAY. . . . . . .  C ADDR   0014H   A   
+MAIN . . . . . . .  C ADDR   0000H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+UP . . . . . . . .  C ADDR   0016H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

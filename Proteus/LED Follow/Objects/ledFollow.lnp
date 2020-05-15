@@ -1,0 +1,3 @@
+".\Objects\LedFollowCode.obj" 
+TO ".\Objects\ledFollow" 
+PRINT(".\Listings\ledFollow.m51") RAMSIZE(256) 

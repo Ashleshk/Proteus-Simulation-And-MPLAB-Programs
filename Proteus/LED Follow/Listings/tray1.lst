@@ -1,0 +1,34 @@
+A51 MACRO ASSEMBLER  TRAY1                                                                07/03/2018 23:12:44 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\tray1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE tray1.asm SET(SMALL) DEBUG PRINT(.\Listings\tray1.lst) OBJECT(.\Objects
+                      \tray1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 7420              2             MOV A,#020H
+0002 94CC              3             SUBB A,#0CCH
+0004 F550              4             MOV 50H,A
+0006 74AB              5             MOV A,#0ABH
+0008 9412              6             SUBB A,#012H
+000A F551              7             MOV 51H,A
+000C 80FE              8             HERE:SJMP HERE
+                       9             END
+A51 MACRO ASSEMBLER  TRAY1                                                                07/03/2018 23:12:44 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   000CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,3 @@
+".\Objects\hhh.obj" 
+TO ".\Objects\hex" 
+PRINT(".\Listings\hex.m51") RAMSIZE(256) 

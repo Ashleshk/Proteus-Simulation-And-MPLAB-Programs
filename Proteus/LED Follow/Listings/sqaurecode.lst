@@ -1,0 +1,56 @@
+A51 MACRO ASSEMBLER  SQAURECODE                                                           07/18/2018 00:05:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\sqaurecode.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE sqaurecode.asm SET(SMALL) DEBUG PRINT(.\Listings\sqaurecode.lst) OBJECT
+                      (.\Objects\sqaurecode.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020030            2     LJMP MAIN
+0030                   3     ORG 0030H
+                       4     
+                       5     
+0030 758910            6     MAIN:   MOV TMOD, #10H                  ;select timer  mode 1 mode 1
+0033 758DFF            7                     MOV TH1,#0FFH                   ;from the calcution load upper-4-bits to th1
+0036 758B19            8                     MOV TL1,#19H                    ;from the calcution load lower-4-bits to tl1
+0039 D295              9                     SETB P1.5                               ;control the fifth led of port 1
+003B 1143             10                     ACALL DELAY_TIMER               ;call delay function
+003D C295             11                     CLR P1.5                                ;set led low 
+003F 1143             12                     ACALL DELAY_TIMER               ;call again
+0041 80ED             13                     SJMP MAIN                               ;loop till the end
+                      14                     
+0043                  15     DELAY_TIMER:                                    ;loop for delay
+0043 D28E             16             SETB TR1                                ;set timer clock
+0045 308FFD           17                     AGAIN: JNB TF1,AGAIN    ; check for timer-flag
+0048 C28E             18                     CLR TR1                                 ;clear tr1
+004A C28F             19                     CLR TF1                                 ;clear timer flag
+004C 758DFF           20                     MOV TH1,#0FFH                   ;load data to preset
+004F 758B19           21                     MOV TL1,#19H
+0052 22               22                     RET
+                      23     END             
+A51 MACRO ASSEMBLER  SQAURECODE                                                           07/18/2018 00:05:11 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0045H   A   
+DELAY_TIMER. . . .  C ADDR   0043H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
