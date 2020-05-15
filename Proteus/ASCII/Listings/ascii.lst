@@ -1,0 +1,55 @@
+A51 MACRO ASSEMBLER  ASCII                                                                07/16/2018 23:44:22 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ascii.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ascii.asm SET(SMALL) DEBUG PRINT(.\Listings\ascii.lst) OBJECT(.\Objects
+                      \ascii.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1      ORG 0000H
+0000 020036            2      LJMP MAIN
+0036                   3      ORG 0036H
+                       4     
+0036                   5     MAIN:
+0036 7B1A              6         MOV R3, #26                 ;SET MAX LIMIT FOR COUNTER
+0038 7441              7         MOV A , #'A'                  ;SET ACC OOH SO AS P1 PORT
+                       8                              
+003A F590              9         COUNT:  MOV P1,A              ;MOV CONTENT OF A TO P1
+003C 1A               10         dec R2
+003D 1144             11             ACALL DELAY   
+003F 04               12         INC A                          ;DA USED FOR BCD CORRECTION
+0040 DBF8             13         DJNZ R3 , COUNT
+0042 80FE             14             SJMP $
+                      15         
+0044                  16     DELAY:                        ;DELAY LOOP
+0044 7AB4             17         MOV R2,#180
+0046 7CFF             18         UP:MOV R4,#0FFH
+0048 DCFE             19         AGAIN: DJNZ R4,AGAIN
+004A DAFA             20         DJNZ R2,UP
+004C 22               21         RET
+                      22     END 
+                             
+                             
+                             
+A51 MACRO ASSEMBLER  ASCII                                                                07/16/2018 23:44:22 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0048H   A   
+COUNT. . . . . . .  C ADDR   003AH   A   
+DELAY. . . . . . .  C ADDR   0044H   A   
+MAIN . . . . . . .  C ADDR   0036H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+UP . . . . . . . .  C ADDR   0046H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
